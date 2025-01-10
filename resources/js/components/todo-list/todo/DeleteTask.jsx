@@ -1,17 +1,11 @@
 import React from "react";
+import Button from "../../library/Button";
 
 const DeleteTask = ({ id }) => {
     const handleDelete = () => {
         console.log(id);
     };
-    return (
-        <button
-            onClick={handleDelete}
-            className="ml-4 p-1 bg-red-500 text-white rounded hover:bg-red-600"
-        >
-            Delete
-        </button>
-    );
+    return <Button variant="danger" className="ms-5"  onClick={handleDelete}>Delete</Button>;
 };
 
 export default DeleteTask;
