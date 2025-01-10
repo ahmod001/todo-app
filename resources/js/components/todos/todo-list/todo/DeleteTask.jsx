@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../../library/Button";
+import Button from "../../../library/Button";
 
 const DeleteTask = ({ id }) => {
     const handleDelete = () => {
