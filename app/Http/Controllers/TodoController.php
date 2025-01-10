@@ -6,15 +6,23 @@ use App\Models\Todo;
 use App\Traits\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Inertia\Inertia;
 
 class TodoController extends Controller
 {
     use Response;
 
+
+    public function show()
+    {
+        return Inertia::render('Todo');
+    }
+
     public function index()
     {
         $todoList = Todo::paginate(10);
-        return $this->success(data: $todoList);
+
+        return response()->json($todoList);
     }
 
     public function todoById(Todo $todo)

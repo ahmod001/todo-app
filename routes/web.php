@@ -10,3 +10,6 @@ Route::controller(TodoController::class)->prefix('todos')->group(function () {
     Route::post('/{todo}', 'update');
     Route::delete('/{todo}', 'delete');
 });
+
+
+Route::get('/', [TodoController::class, 'show']);
