@@ -1,4 +1,4 @@
-# Dynamic Todo App
+# Todo App
 
 <img src="https://github.com/user-attachments/assets/2f9ef13f-4c4a-4c2d-b176-8ff71a47ae4e" alt="App Preview" width="100%">
 
@@ -36,7 +36,7 @@ Follow the steps below to get the application running on your local machine:
 
    ```bash
    git clone https://github.com/your-username/your-repo-name.git
-   cd your-repo-name
+   cd todo-app
    ```
 
 2. **Install PHP dependencies**
