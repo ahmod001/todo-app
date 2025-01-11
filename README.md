@@ -35,7 +35,7 @@ Follow the steps below to get the application running on your local machine:
 1. **Clone the repository**
 
    ```bash
-   git clone [https://github.com/ahmod001/todo-app.git]
+   git clone https://github.com/ahmod001/todo-app.git
    cd todo-app
    ```
 
