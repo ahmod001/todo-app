@@ -11,7 +11,7 @@ const Todos = () => {
     });
 
     if (isLoading) return <TodoListSkeleton />;
-    return <TodoList list={data?.data} />;
+    return <TodoList list={data} />;
 };
 
 export default Todos;

@@ -20,7 +20,7 @@ class TodoController extends Controller
 
     public function index()
     {
-        $todoList = Todo::paginate(10);
+        $todoList = Todo::all();
 
         return response()->json($todoList);
     }

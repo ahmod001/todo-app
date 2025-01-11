@@ -1,18 +1,19 @@
 import { AnimatePresence, motion } from "motion/react";
-import Button from "../../../library/Button";
 import Title from "./Title";
 import Form from "./Form";
+import CloseModal from "./CloseModal";
 const TodoFormModal = ({ open, closeModal }) => {
     return (
         <AnimatePresence>
             {open && (
-                <div
-                    onClick={closeModal}
-                    className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
-                >
-                    <Animate className="bg-white p-6 rounded-lg shadow-lg max-w-96 w-full">
-                        <Title />
-                        <Form />
+                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                    <Animate className="bg-white py-6 px-4 rounded-md shadow-lg  sm:max-w-sm max-w-xs w-full">
+                        <header className="flex justify-between items-start mb-3">
+                            <Title />
+                            <CloseModal onClick={closeModal} />
+                        </header>
+
+                        <Form closeModal={closeModal}/>
                     </Animate>
                 </div>
             )}
