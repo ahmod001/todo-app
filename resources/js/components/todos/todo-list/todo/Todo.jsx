@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 
 const Todo = ({ id, title, description, isCompleted }) => {
     return (
-        <Animate className="flex justify-between items-center bg-white rounded-sm shadow-md py-4 px-2.5 cursor-pointer">
+        <Animate className="flex justify-between items-center bg-white rounded-sm shadow-md  cursor-pointer">
             <Task
                 id={id}
                 title={title}

@@ -1,14 +1,40 @@
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import React from "react";
+import { updateTodo } from "../../../../services/api/todo";
 
 const Task = ({ id, title, description, isCompleted }) => {
-    const handleCompleteTask = () => {};
-    //     onClick={handleCompleteTask}
-    return <Title isCompleted={isCompleted} >{title}</Title>;
+    const queryClient = useQueryClient();
+
+    const { mutate, isPending } = useMutation({
+        mutationFn: (data) => updateTodo(data),
+        onSuccess: () => {
+            queryClient.invalidateQueries();
+        },
+        onError: (error) => {
+            console.error(error);
+        },
+    });
+
+    const handleCompleteTask = () => {
+        const data = {
+            title: title,
+            description: description,
+            is_completed: true,
+        };
+        mutate(id, data);
+    };
+
+    return (
+        <Title isCompleted={isCompleted} onClick={handleCompleteTask}>
+            {title}
+        </Title>
+    );
 };
 
-const Title = ({ children, isCompleted }) => (
+const Title = ({ children, isCompleted, onClick }) => (
     <h4
-        className={`flex-1 font-medium text-lg ${
+        onClick={onClick}
+        className={`flex-1 font-medium text-lg my-4 ms-2.5 ${
             isCompleted ? "line-through text-gray-500" : ""
         }`}
     >

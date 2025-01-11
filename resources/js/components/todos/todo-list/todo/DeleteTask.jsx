@@ -24,7 +24,7 @@ const DeleteTask = ({ id }) => {
         <Button
             loading={isPending}
             variant="danger"
-            className="ms-5"
+            className="ms-5 my-4 me-2.5"
             onClick={handleDelete}
         >
             Delete
