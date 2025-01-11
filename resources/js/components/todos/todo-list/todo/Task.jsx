@@ -6,7 +6,7 @@ const Task = ({ id, title, description, isCompleted }) => {
     const queryClient = useQueryClient();
 
     const { mutate, isPending } = useMutation({
-        mutationFn: (data) => updateTodo(data),
+        mutationFn: ({id, data}) => updateTodo(id, data),
         onSuccess: () => {
             queryClient.invalidateQueries();
         },
@@ -21,7 +21,7 @@ const Task = ({ id, title, description, isCompleted }) => {
             description: description,
             is_completed: true,
         };
-        mutate(id, data);
+        mutate({id, data});
     };
 
     return (
